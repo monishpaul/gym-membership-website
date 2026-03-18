@@ -1,0 +1,237 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+    background: radial-gradient(circle at top, #1a0033, #000);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-size: 16px;
+}
+
+/* NAV HOVER EFFECT */
+nav a::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, purple, cyan);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Background Image */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('https://images.unsplash.com/photo-1558611848-73f7eb4001ab') center/cover;
+
+    text-align: center;
+    animation: fadeIn 2s ease;
+}
+
+.hero h2 {
+    font-size: 55px;
+    text-shadow: 0 0 20px purple;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, purple, blue);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 20px purple;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px purple;
+}
+
+/* FEATURES SECTION */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 40px;
+    flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.08);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px rgba(128,0,128,0.4);
+    transition: 0.4s;
+    margin: 15px;
+    min-width: 220px;
+    text-align: center;
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 30px purple;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 100px auto;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px purple;
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, purple, blue);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* PORTFOLIO */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 50px;
+    gap: 20px;
+}
+
+.profile-card {
+    grid-column: span 2;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, purple, blue);
+    box-shadow: 0 0 30px purple;
+    animation: slideDown 1s ease;
+}
+
+.card ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.card li {
+    padding: 5px 0;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .hero h2 {
+        font-size: 35px;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+ul {
+    color: white;
+    margin-top: 10px;
+}
+
+h3 {
+    margin-top: 15px;
+    color: #fff;
+}
